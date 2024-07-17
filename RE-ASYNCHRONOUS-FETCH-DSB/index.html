@@ -18,62 +18,86 @@
     ></script>
   </head>
   <body>
-    <!-- Start of Title -->
-    <div class="row">
-      <div class="container"></div>
-      <div class="row mt-5">
-        <div class="col">
-          <h1>RANDI Movie DB</h1>
+    <div class="container">
+      <!-- Start of Title -->
+      <div class="row">
+        <div class="container"></div>
+        <div class="row mt-5">
+          <div class="col">
+            <h1>RANDI Movie DB</h1>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- End of Title -->
-    <!-- ----------------------------------- -->
-    <!-- Start of Cards Container -->
-    <div class="row card-container"></div>
-    <!-- End of Cards Container-->
-    <!-- ----------------------------------- -->
-    <!-- Start of Modal Container -->
-    <div class="row modal-container">
-      <!-- Modal -->
-      <div
-        class="modal fade"
-        id="movieDetails"
-        tabindex="-1"
-        aria-labelledby="movieDetailsLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="movieDetailsLabel">
-                Modal title
-              </h1>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">...</div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-              <button type="button" class="btn btn-primary">
-                Save changes
-              </button>
+      <!-- End of Title -->
+      <!-- ----------------------------------- -->
+      <!-- Start of Cards Container -->
+      <div class="row card-container"></div>
+      <!-- End of Cards Container-->
+      <!-- ----------------------------------- -->
+      <!-- Start of Modal Container -->
+      <div class="row modal-container">
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="movieDetails"
+          tabindex="-1"
+          aria-labelledby="movieDetailsLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="movieDetailsLabel">
+                  Movie Details
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <img src="" class="img-fluid" />
+                    </div>
+                    <div class="col-md">
+                      <ul class="list-group">
+                        <li class="list-group-item"><h4>Aengers</h4></li>
+                        <li class="list-group-item">
+                          <strong>Director : </strong>Randi Himawan
+                        </li>
+                        <li class="list-group-item">
+                          <strong>Author : </strong> Ilyas, Icha
+                        </li>
+                        <li class="list-group-item">
+                          <strong>Writer :</strong>
+                        </li>
+                        <li class="list-group-item">
+                          <strong>Plot : </strong>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <!-- End of Modal Container-->
     </div>
-    <!-- End of Modal Container-->
     <!-- --------------------------------------------------------------- -->
     <script src="/RE-ASYNCHRONOUS-FETCH-DSB/js/script.js"></script>
     <script

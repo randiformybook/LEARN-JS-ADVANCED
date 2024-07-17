@@ -14,7 +14,7 @@ $.ajax({
 });
 
 function cardsResult(movie) {
-  return `<div class="col-md-2 my-4">
+  return `<div class="col-md-3 my-4">
                     <div class="card">
                       <img src=${movie.Poster} class="card-img-top" alt="" />
                       <div class="card-body">

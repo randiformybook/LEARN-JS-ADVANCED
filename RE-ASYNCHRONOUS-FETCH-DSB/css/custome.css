@@ -1,6 +1,8 @@
+.container {
+  margin: 0 auto;
+  width: 80%;
+}
+
 h1 {
   font-family: "Roboto", sans-serif;
-}
-body {
-  padding: 3%;
 }
