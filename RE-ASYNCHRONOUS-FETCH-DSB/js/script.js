@@ -1,35 +1,39 @@
-$.ajax({
-  url: "http://www.omdbapi.com/?apikey=1cf40ec1&s=avengers",
-  success: (results) => {
-    const movies = results.Search;
-    let cards = "";
-    movies.forEach((movie) => {
-      cards += showCard(movie);
-    });
-    $(".card-container").html(cards);
-
-    // Ketika Button Show Details di Click
-    $(".detailButton").on("click", function () {
-      console.log($(this).data("imdbid"));
-      $.ajax({
-        url:
-          "http://www.omdbapi.com/?apikey=1cf40ec1&i=" + $(this).data("imdbid"),
-        success: (mdetail) => {
-          let movieDetail = showDetails(mdetail);
-          $(".modal-body").html(movieDetail);
-        },
+$(".searchButton").on("click", function () {
+  $.ajax({
+    url:
+      "http://www.omdbapi.com/?apikey=1cf40ec1&s=" + $(".inputKeyword").val(),
+    success: (results) => {
+      const movies = results.Search;
+      let cards = "";
+      movies.forEach((movie) => {
+        cards += showCard(movie);
       });
-    });
-  },
-  error: (e) => {
-    console.error(e);
-  },
+      $(".card-container").html(cards);
+
+      // Ketika Button Show Details di Click
+      $(".detailButton").on("click", function () {
+        console.log($(this).data("imdbid"));
+        $.ajax({
+          url:
+            "http://www.omdbapi.com/?apikey=1cf40ec1&i=" +
+            $(this).data("imdbid"),
+          success: (mdetail) => {
+            let movieDetail = showDetails(mdetail);
+            $(".modal-body").html(movieDetail);
+          },
+        });
+      });
+    },
+    error: (e) => {
+      console.error(e);
+    },
+  });
 });
 
 function showCard(movie) {
-  return `<div class="col-md-3 my-4">
+  return `<div class="col-sm-2 my-4">
                     <div class="card">
-                      <img src=${movie.Poster} class="card-img-top" alt="" />
+                    <img src=${movie.Poster} class="card-img-top" alt="" />
                       <div class="card-body">
                         <h5 class="card-title">${movie.Title}</h5>
                         <h6 class="card-subtitle mb-2 text-body-secondary">${movie.Year}</h6>
