@@ -1,7 +1,7 @@
 $(".searchButton").on("click", function () {
   $.ajax({
     url:
-      "http://www.omdbapi.com/?apikey=1cf40ec1&s=" + $(".inputKeyword").val(),
+      "http://www.omdbapi.com/?apikey=1cf40ec1&s=" + $(".input-keyword").val(),
     success: (results) => {
       const movies = results.Search;
       let cards = "";
@@ -11,8 +11,7 @@ $(".searchButton").on("click", function () {
       $(".card-container").html(cards);
 
       // Ketika Button Show Details di Click
-      $(".detailButton").on("click", function () {
-        console.log($(this).data("imdbid"));
+      $(".detail-button").on("click", function () {
         $.ajax({
           url:
             "http://www.omdbapi.com/?apikey=1cf40ec1&i=" +
@@ -37,7 +36,7 @@ function showCard(movie) {
                       <div class="card-body">
                         <h5 class="card-title">${movie.Title}</h5>
                         <h6 class="card-subtitle mb-2 text-body-secondary">${movie.Year}</h6>
-                        <a href="#" class="btn btn-primary detailButton" data-bs-toggle="modal" data-bs-target="#movieDetails" data-imdbid ="${movie.imdbID}">Show Details</a>
+                        <a href="#" class="btn btn-primary detail-button" data-bs-toggle="modal" data-bs-target="#movieDetails" data-imdbid ="${movie.imdbID}">Show Details</a>
                       </div>
                     </div>
                   </div>`;
